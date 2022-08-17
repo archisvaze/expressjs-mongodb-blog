@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Markdown Blog</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="header">
+            <h2>
+                Best Blog Ever!
+            </h2>
+        </div>
+    </div>
+    <div class="main">
+
+
+        <div class="articles-container">
+
+            <% articles.reverse().forEach(article=> { %>
+                <div class="card">
+                    <a href="<%= " /articles/" + article._id %>" class="info">i</a>
+
+                    <form action="<%=" /articles/delete/" + article._id %>" method="DELETE">
+                        <button type="submit" class="delete">X</button>
+                    </form>
+
+                    <h3 class="title">
+                        <%= article.title %>
+                    </h3>
+                    <p class="date">
+                        <%= new Date(article.date).toLocaleString() %>
+                    </p>
+                    <p class="content">
+                        <%= article.content %>
+                    </p>
+                    <p class="author">
+                        by <%= article.author %>
+                    </p>
+                </div>
+                <% }) %>
+
+        </div>
+
+        <a href="/articles/new" class="new-button">New Article</a>
+
+    </div>
+</body>
+
+</html>

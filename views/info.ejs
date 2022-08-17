@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Article Info</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="header">
+            <h2>
+                Article Info
+            </h2>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="info-container">
+            <div class="matter">
+                <p class="info-1">
+                    This article, titled <span style="font-style: italic">"<%= article.title %>"</span>
+                    was posted on <%= article.date %>
+                        by <%= article.author %>
+                </p>
+                <h4>Article Content:</h4>
+                <p>
+                    <%= article.content %>
+                </p>
+            </div>
+
+            <form action="<%=" /articles/edit/" + article._id %>" method="GET">
+                <button type="submit" class="edit-button">Edit this Article</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
